@@ -1,0 +1,346 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+input,
+button {
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  font-size: 1.0rem;
+
+
+}
+
+body {
+  background-color: rgb(243, 193, 170);
+}
+
+.noFill {
+  fill: none;
+}
+
+/*Style the header*/
+.header {
+  position: relative;
+  text-align: center;
+}
+
+.heading {
+  position: absolute;
+  top: 50%;
+  font-family: 'Roboto', sans-serif;
+  color: rgb(161, 89, 41);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: black 4px 4px 4px;
+}
+
+.container {
+  background: #6b2104;
+  padding: 25px;
+  max-width: 760px;
+  margin: 25px auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+/*This is the enter task bar*/
+.add-new-task-box {
+  width: 100%;
+  height: 80px;
+  padding: 15px;
+  background: #5e1b01;
+  z-index: 5;
+  float: left;
+}
+
+.add-new-task-box input {
+  width: 35%;
+  height: 50px;
+  float: left;
+  color: rgb(243, 193, 170);
+  font-size: 15px;
+  font-weight: 400;
+  text-indent: 18px;
+  padding: 0 60px 0 0;
+  background: rgba(255, 255, 255, 0.2);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+
+.add-new-task-box input::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.75);
+
+}
+
+
+.add-new-task-box button {
+  width: 50px;
+  height: 50px;
+  float: left;
+  border-radius: 25px;
+  background: #fff;
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+
+}
+
+.new-task-container {
+  width: 100%;
+  float: left;
+  padding: 15px;
+  text-align: center;
+}
+
+.ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul.todo {
+  width: 100%;
+  float: left;
+}
+
+
+
+/*This is the container of the lists items */
+ul.todo li {
+  width: 100%;
+  min-height: 105px;
+  /*work on this */
+  float: left;
+  text-indent: 14px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgb(19, 2, 2);
+  line-height: 22px;
+
+
+  background: #b45c28;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 2px rgba(44, 62, 80, 0.10);
+  margin: 0 0 10px 0;
+  padding: 0 100px 0 0;
+
+
+}
+
+ul.todo listlast-of-type {
+  margin: 0;
+}
+
+ul.todo li .buttons {
+  /*The magic is here*/
+  width: 80px;
+  height: 80px;
+
+  position: absolute;
+  float: right;
+  top: 0;
+  right: 0;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  cursor: pointer;
+}
+
+ul.todo li .buttons button {
+  width: 50px;
+  height: 50px;
+  float: left;
+  background: none;
+  position: relative;
+  border: 0px;
+  box-shadow: none;
+  outline: none;
+  border-image-width: 80px;
+  cursor: pointer;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+/*This is the small border inbetween the bottons*/
+ul.todo li .buttonslast-of-type:before {
+  content: '';
+  width: 1px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background: #edf0f1;
+
+}
+
+ul.todo li .buttons button svg {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+
+  left: 10px;
+  float: left;
+  margin: -11px -3px;
+}
+
+.add-new-task-box button svg {
+  width: 16px;
+  height: 16px;
+  margin: -2px;
+  cursor: pointer;
+}
+
+/*This can help you change the color of the button*/
+.add-new-task-box button svg .fill {
+  fill: #25b39a;
+}
+
+
+ul.todo li .buttons button.complete svg {
+  border-radius: 50%;
+  border: 1.5px solid #25b39a;
+
+  -webkit-transition: background 0.2s ease;
+  -moz-transition: background 0.2s ease;
+  -ms-transition: background 0.2s ease;
+  -o-transition: background 0.2s ease;
+  transition: background 0.2s ease;
+}
+
+ul.todo li .buttons button.complete:hover svg .fill {
+  fill: #25b39a;
+
+}
+
+
+
+ul.todo li .buttons button.complete svg .fill {
+  border-radius: 50%;
+  border: 1.5px solid #25b39a;
+
+  transition: background 0.2s ease;
+
+}
+
+ul.todo#completed:not(:empty):before {
+  position: relative;
+  padding: 60px 0 0 0;
+
+
+}
+
+ul.todo#completed:not(:empty):before {
+  content: '';
+  width: 150px;
+  height: 1px;
+  position: absolute;
+  top: 30px;
+  left: 50px;
+  margin: 0 0 0 -75px;
+
+
+}
+
+ul.todo#completed li .buttons button.complete svg {
+  border-radius: 50%;
+  background: rgba(37, 185, 154, 0.75);
+
+
+
+}
+
+ul.todo#completed li .buttons button.complete:hover svg {
+  background: #25b39a;
+
+}
+
+
+ul.todo#completed li .buttons button.complete svg .fill {
+  fill: #fff;
+
+}
+
+
+ul.todo li .buttons button.remove svg {
+  fill: #c0cecb;
+  -webkit-transition: fill 0.2s ease;
+  -moz-transition: fill 0.2s ease;
+  -ms-transition: fill 0.2s ease;
+  -o-transition: fill 0.2s ease;
+  transition: fill 0.2s ease
+}
+
+/*This is the delete button*/
+ul.todo li .buttons button.remove svg .fill {
+  fill: #c0cecb;
+  -webkit-transition: fill 0.2s ease;
+  -moz-transition: fill 0.2s ease;
+  -ms-transition: fill 0.2s ease;
+  -o-transition: fill 0.2s ease;
+  transition: fill 0.2s ease
+}
+
+ul.todo li .buttons button.remove:hover svg .fill {
+  fill: red;
+
+}
+
+
+ul.todo#completed li .buttons button.remove svg {
+  border-radius: 50%;
+  background: rgba(250, 6, 26, 0.562);
+
+  transition: background 0.2s ease;
+
+
+}
+
+/*This supposed to add an empty message*/
+.empty-state {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  /*This does not work. Work on it when its flex */
+}
+
+.checklist-icon {
+  margin-bottom: 20px;
+}
+
+.empty-state .empty-state__description {
+  margin-bottom: 20px;
+}
+
+.todo:empty {
+  display: none;
+}
+
+.todo:empty+.empty-state {
+  display: flex;
+}
